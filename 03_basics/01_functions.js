@@ -90,4 +90,4 @@ function handleArray(getArray) {
 }
 
 // console.log(handleArray(myNewArray));
-console.log(handleArray([2000, 3210, 9099]));
+// console.log(handleArray([2000, 3210, 9099]));
