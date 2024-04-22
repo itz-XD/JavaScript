@@ -14,7 +14,7 @@ if (true) {
 // console.log(c);
 
 
-// ``````````````````````      ````````````````````
+// ``````````````````````   Nested Scopes   ````````````````````
 
 function one() {
     const username = "_XD"
