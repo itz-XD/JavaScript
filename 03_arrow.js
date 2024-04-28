@@ -13,7 +13,7 @@ const user = {
 // user.username = "sam"   // or yaha pe maine  current context(values jo variable apko hold kar rahe hai) change kar diya
 // user.welcomeMessage()
 
-// console.log(this);
+// console.log(this);       // output: {} <- empty OBJECT ;)
 
 // function chai() {
 //     let username = "_xD"
@@ -48,7 +48,7 @@ const chai = () => {
 
 // const addTwo = (num1, num2) => (num1 + num2)
 
-const addTwo = (num1, num2) => ({username: "_xD"})
+const addTwo = (num1, num2) => ({username: "_xD"})      // <- here's how to return an object without using return  cause of () <-this
 
 
 console.log(addTwo(1, 2));
