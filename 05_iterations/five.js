@@ -1,4 +1,4 @@
-// for each
+// forEach
 
 const coding = ["js", "ruby", "java", "python", "cpp"]
 
