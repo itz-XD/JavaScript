@@ -1,4 +1,4 @@
-// for of
+// for of (for array's & map's)
 
 // ["", "", ""]
 // [{}, {}, {}]
