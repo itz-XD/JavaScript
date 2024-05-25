@@ -1,0 +1,26 @@
+-> JavaScript                                      |[ Default js ]|
+            |->     Synchronous                     
+            |->     Single threaded
+
+-> Execution Context
+            |->     Execute one line of code at a time
+
+            |-> console log -> 1            each operation waits for the last
+            |                               to complete before executing
+            |-> console log -> 2
+            |   ______________          _______________
+            |   | CALL STACK |          | MEMORY HEAP |
+            |   --------------          ---------------
+            v   
+
+__________________________________________________________________________________________________________
+
+
+
+                Blocking code           Vs       Non Blocking code
+                    |                                   |
+                    v                                   v
+                Block the flow of program        Does not block execution
+                    |                                   |
+                    v                                   v
+                Read File Sync                   Read File Async
