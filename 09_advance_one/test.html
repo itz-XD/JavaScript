@@ -1,0 +1,48 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .avatar {
+            height: 150px;
+            width: 150px;
+            border: 2px solid white;
+            background-size: cover;
+            /* Ensure the image covers the entire div */
+            background-position: center;
+            /* Center the image */
+            background-repeat: no-repeat;
+            /* Prevent the image from repeating */
+        }
+    </style>
+</head>
+
+<body style="background-color: #212121; color: #fff;">
+    <div id="main">
+        <div class="avatar"></div>
+    </div>
+</body>
+<script>
+    const reqUrl = 'https://api.github.com/users/itz-XD';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', reqUrl);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) { // Check if request is complete and successful
+            const data = JSON.parse(this.responseText);
+            const avatar = data.avatar_url;
+            console.log(data);
+            console.log(typeof data);
+            console.log(data.followers);
+
+            // Set the background image of the div with class avatar
+            document.querySelector('.avatar').style.backgroundImage = `url(${avatar})`;
+        }
+    }
+    xhr.send();
+</script>
+
+</html>

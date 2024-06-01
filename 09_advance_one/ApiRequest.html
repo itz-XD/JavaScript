@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #idCard {
+            height: 250px;
+            width: 350px;
+            border: 2px solid #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .avatar {
+            height: 150px;
+            width: 150px;
+            border: 2px solid white;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: block;
+            margin: auto;
+        }
+
+        .followers {
+            text-align: center;
+            padding-top: 20px;
+            color: orangered;
+        }
+    </style>
+</head>
+
+<body style="background-color: #212121; color: #fff;">
+    <div id="main">
+        <div id="idCard">
+            <img src="" alt="" class="avatar">
+            <div class="followers">Followers: </div>
+            <button class="show">show</button>
+            <button class="hide">hide</button>
+        </div>
+    </div>
+</body>
+<script>
+    const reqUrl = 'https://api.github.com/users/itz-XD'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', reqUrl);
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText)
+            const avatar = data.avatar_url
+            console.log(data);
+            console.log(typeof data);
+            console.log(data.followers);
+
+            const profilePic = document.querySelector('.avatar')
+            const followers = document.querySelector('.followers')
+            const show = document.querySelector('.show')
+            const hide = document.querySelector('.hide')
+
+            show.addEventListener('click', () => {
+                // profilePic.style.backgroundImage = `url(${avatar})`
+                profilePic.src = avatar
+                followers.innerHTML = `<span>Followers: ${data.followers} ;(</span>`
+            })
+
+            hide.addEventListener('click', () => {
+                // profilePic.style.backgroundImage = ``
+                profilePic.src = 'avatar'
+                followers.innerHTML = `Followers: `
+            })
+
+        }
+    }
+    xhr.send();
+</script>
+
+</html>
