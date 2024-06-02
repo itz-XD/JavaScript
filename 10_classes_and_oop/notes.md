@@ -18,7 +18,7 @@ Object literal
 
 
 ## 4 Pillars
-Abstraction -> details hide kar lena -> fetch
-Encapsulation -> 
-Inheritance -> 
-Polymorphism -> 
+- Abstraction -> details hide kar lena -> fetch
+- Encapsulation ->
+- Inheritance ->
+- Polymorphism ->
